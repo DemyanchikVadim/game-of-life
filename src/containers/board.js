@@ -12,6 +12,7 @@ class Board extends Component {
             <tr key={i}> {row.map((cell,j) =>
               <Cell
                 key={j}
+                alive={cell.status}
               />)}
             </tr> )}
           </tbody>
