@@ -8,7 +8,13 @@ const GRID_WIDTH = 80;
 const initialGrid = grid.makeGrid(GRID_HEIGHT, GRID_WIDTH);
 
 export default (state = initialGrid, action) => {
-  switch (action.type) {
+  switch(action.type){
+    case 'MAKE_RANDOM':
+      return grid.makeGrid(GRID_HEIGHT, GRID_WIDTH, true);
+
+    case 'TICK':
+      return grid.advanceGrid(state.slice(0));
+    
     default:
       return state;
   }
