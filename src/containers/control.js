@@ -1,6 +1,3 @@
-/**
- * Created by vadim on 07.02.2017.
- */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { makeRandomGrid,  startPlaying, tick  } from '../actions/';

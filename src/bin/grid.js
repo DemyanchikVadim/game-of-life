@@ -1,6 +1,3 @@
-/**
- * Created by vadim on 06.02.2017.
- */
 export const makeGrid = (height, width, makeRandom = false) => {
   let grid = [];
   for (var i = 0; i < height; i++) {

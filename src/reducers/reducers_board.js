@@ -1,6 +1,3 @@
-/**
- * Created by vadim on 06.02.2017.
- */
 import * as grid from '../bin/grid';
 
 const GRID_HEIGHT = 40;
