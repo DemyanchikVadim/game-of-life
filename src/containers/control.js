@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { makeRandomGrid,  startPlaying, tick  } from '../actions/';
+import { makeRandomGrid,  startPlaying, tick, clear  } from '../actions/';
 
 import Button from '../components/button';
 
@@ -10,6 +10,15 @@ class Control extends Component {
       setInterval(this.props.tick,100);
       this.props.startPlaying();
   }
+
+  clear(){
+    if (this.props.playState.isRunning) {
+      clearInterval(this.props.playState.timerId);
+      this.props.stopPlaying();
+    }
+    this.props.clear();
+  }
+
 
   render(){
     return (
@@ -25,6 +34,13 @@ class Control extends Component {
               title={'Start'}
             />
           </div>
+          <div className="button-group">
+          <Button
+            handleClick={() => this.clear()}
+            title={'Clear'}
+          />
+          </div>
+
         </div>
       </div>
     );
@@ -40,7 +56,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     random: () => dispatch(makeRandomGrid()),
     startPlaying: () => dispatch(startPlaying()),
-    tick: () => dispatch(tick())
+    tick: () => dispatch(tick()),
+    clear: () => dispatch(clear())
   };
 };
 
