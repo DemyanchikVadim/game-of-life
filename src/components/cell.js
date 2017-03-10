@@ -1,10 +1,10 @@
-/**
- * Created by vadim on 06.02.2017.
- */
 import React from 'react';
 
-export default ({alive}) =>
+export default ({alive,  handleClick}) =>
   (
-    <td  className={`${alive ? 'alive' : ''} `}>
+    <td
+      onClick={handleClick}
+      className={`${alive ? 'alive' : ''} `}
+    >
     </td>
-  );
+  )
